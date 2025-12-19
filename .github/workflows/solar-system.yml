@@ -96,6 +96,13 @@
               echo "kubectl returned $?"
               kubectl -n default get pod
               sleep 10
+    integration-testing:
+      uses: ./.github/workflows/reusable-workflow.yml
+      with:
+        ingress-url: ${{ needs.dev-deploy.outputs.APP_INGRESS_URL }}
+
+
+
             
 
 
